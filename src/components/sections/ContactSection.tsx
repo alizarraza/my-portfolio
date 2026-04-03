@@ -83,8 +83,6 @@ export function ContactSection() {
           <MagneticButton
             as="a"
             href={site.contact.secondaryCta.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="font-mono text-[0.65rem] tracking-[0.18em] uppercase border border-ink/20 text-ink/70 px-10 py-4 hover:border-ink hover:text-ink transition-all duration-300 inline-flex items-center gap-3"
           >
             {site.contact.secondaryCta.label}
