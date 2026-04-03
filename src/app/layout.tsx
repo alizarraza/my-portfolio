@@ -1,40 +1,41 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next'
+import '@/styles/globals.css'
+import { Providers } from '@/components/ui/Providers'
+import { Cursor }    from '@/components/ui/Cursor'
+import { Navbar }    from '@/components/ui/Navbar'
+import { Ticker }    from '@/components/ui/Ticker'
+import { site } from '@/content/site'
 
 export const metadata: Metadata = {
-  title: "Alizar's Developments",
-  description: "Designing sleek, modern, and intelligent digital experiences",
-  icons: {
-    icon: "/favi-logo.ico",
-    apple: "/favi-logo.ico",
+  title:       site.seo.title,
+  description: site.seo.description,
+  keywords:    [...site.seo.keywords],
+  authors:     [{ name: site.seo.author }],
+  openGraph: {
+    title:       site.seo.title,
+    description: site.person.headline,
+    type:        'website',
+    locale:      'en_US',
+    url:         process.env.NEXT_PUBLIC_SITE_URL,
   },
-};
+  twitter: {
+    card:  'summary_large_image',
+    title: site.seo.title,
+  },
+}
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="noise">
+      <body>
+        <Providers>
+          <Cursor />
+          <Navbar />
+          <div id="scroll-progress" aria-hidden="true" />
+          <main>{children}</main>
+          <Ticker />
+        </Providers>
       </body>
     </html>
-  );
+  )
 }
