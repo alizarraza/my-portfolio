@@ -12,18 +12,19 @@
     "sanity:build": "sanity build"
   },
   "dependencies": {
-    "next": "^14.2.0",
-    "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "gsap": "^3.12.5",
     "@gsap/react": "^2.1.0",
-    "next-sanity": "^9.4.0",
+    "@radix-ui/react-avatar": "^1.1.11",
     "@sanity/client": "^6.19.0",
     "@sanity/image-url": "^1.0.2",
-    "sanity": "^3.45.0",
-    "lenis": "^1.1.13",
-    "framer-motion": "^11.3.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.0",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "next": "^14.2.0",
+    "next-sanity": "^9.4.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "sanity": "^3.45.0",
     "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
